@@ -1,0 +1,38 @@
+/*function studentEnrollment() {
+  let DSA = [];
+  let WebDev = [];
+  
+  while (true) {
+    let subject = prompt("Select a subject to enroll a student (A) DSA, (B) WebDev:");
+    let selectedSubject;
+    if (subject.toUpperCase() === 'A') {
+      selectedSubject = DSA;
+      subjectName = "DSA";
+    } else if (subject.toUpperCase() === 'B') {
+      selectedSubject = WebDev;
+      subjectName = "WebDev";
+    } else {
+      console.log("Invalid selection.Please choose A or B.");
+      continue;
+    }
+    
+    while (true) {
+      let operation = prompt("Select an option: (0) Enroll, (1) Unenroll, (2) Select Another Subject, (3) Exit");
+      if (operation === '0') {
+        let studentName = prompt("Enter the name of the student to enroll:");
+        selectedSubject.push(studentName);
+                        console.log('${studentName} haa been enrolled in ${subjectName}.');
+                      } else if (operation === '1') {
+                        console.log("Currently enrolled students in " + subjectName + ":" + selectedSubject.join(","));
+                        let studentToUnenroll = prompt("Enter the name of the student to unenroll:");
+                        const index = selectedSubject.indexOf(studentToUnenroll);
+                        if (index !== -1) {
+                          selectedSubject.splice(index, 1);
+                             console.log('${studentToUnenroll} has been unenrolled from ${subjectName}.');
+                           } else {
+                             console.log("Student not found in the enrolled list.");
+                           }
+                         } else if (operation === '2') {
+                             break;
+                           } else if (operation === '3') {
+        
