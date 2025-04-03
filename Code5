@@ -1,13 +1,9 @@
-/*function collectColorPreferences() {
-  let colors = [];
-  let addMore = true;
-  
-  while (addMore) {
-    let color = prompt("Please enter a color you like:");
-    colors.push(color);
-    addMore = confirm("Do you want to add another color?");
-  }
+let favoriteColors = [];
+
+for (let i = 0; i < 3; i++) {
+    let colors = prompt("Enter your three favorite colors:");
+    favoriteColors.push(colors); 
+    console.log("Updated color list: ", favoriteColors);
 }
 
-collectColorPreferences();
-*/
+console.log("Your favorite colors are: ", favoriteColors);
