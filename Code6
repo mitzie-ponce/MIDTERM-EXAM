@@ -1,24 +1,17 @@
-/*function createGroceryList() {
-  let groceryList = [];
-  let createList = prompt("Do you want to create a grocery list? (y/n):");
-  if (createList.toLowerCase() === 'y') {
-    let numberOfItems = prompt("How many items do you want to add to your grocery list?");
-    numberOfItems = Number(numberOfItems);
-    for (let i = 0, i < numberOfItems; i++) {
-      let item = prompt("Enter grocery item" + (i + 1) + ":");
-      groceryList.push(item);
-    }
-    
-    let groceryListSorted = [...groceryList].sort();
-    let groceryListReversed = [...groceryList].reverse();
-    
-    alert("Grocery List:" + groceryList.join(","));
-    alert("Sorted Grocery List:" + groceryListSorted.join(","));
-    alert("Reversed Grocery List:" + groceryListReversed.join(","));
-  } else {
-    console.log("No grocery list created.");
-  }
-}
+let createList = prompt("Do you want to create a grocery list?(y/n)");
 
-createGroceryList();
-*/
+if (createList.toLowerCase() === "y") {
+    let numItems = parseInt(prompt("Enter the number of items to register in the grocery list"));
+    let groceryList = [];
+    for (let i = 0; i < numItems; i++) {
+        let item = prompt("Enter item");
+        groceryList.push(item);
+    }
+    let groceryListSort = groceryList.toSorted();
+    let groceryListReverse = groceryList.toReversed();
+    alert("Grocery List:\n" + groceryList.join("\n")); 
+    alert("Sorted Grocery List:\n" + groceryListSort.join("\n"));
+    alert("Reversed Grocery List:\n" + groceryListReverse.join("\n")); 
+} else {
+    alert("Grocery List Creation Cancelled.");
+}
