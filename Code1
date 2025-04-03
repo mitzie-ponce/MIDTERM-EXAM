@@ -1,15 +1,10 @@
-/*function collectUserInfo() {
-    let fullName = prompt("Please enter your full name (first and last name):");
-    let age = prompt("Please enter your age:");
-    let phoneNumber = prompt("Please enter your phone number:");
-    let favoriteColor = prompt("Please enter your favorite color:");
-    
-    console.log("User Profile Information:");
-    console.log("Full Name: " + fullName);
-    console.log("Age: " + age);
-    console.log("Phone Number: " + phoneNumber);
-    console.log("Favorite Color: " + favoriteColor);
-}
+let fullName = prompt("Enter your Full Name (first and last):");
+let age = prompt("Enter your Age:");
+let favoriteNumber = prompt("Enter your Favorite Number:");
+let favoriteColor = prompt("Enter your Favorite Color:");
 
-collectUserInfo();
-*/
+console.log("User Information");
+console.log("Full Name: " + fullName); 
+console.log("Age: " + age); 
+console.log("Favorite Number: " + favoriteNumber); 
+console.log("Favorite Color: " + favoriteColor);
