@@ -1,19 +1,20 @@
-/*function categorizeUserAge() {
-  let age = prompt("Please enter your age:");
-  age = Number(age);
-  
-  if (age < 5) {
-    console.log("You are a Toddler.");
-  } else if (age >= 5 && age <= 12) {
-    console.log("You are a Child.");
-  } else if (age >= 13 && age <= 19) {
-    console.log("You are a Teenager.");
-  } else if (age >= 20 && age <= 60) {
-    console.log("You are  Middle Aged.");
-  } else {
-    console.log("You are a Senior.");
-  }
+let age = prompt("Enter your Age:");
+age = parseInt(age);
+
+if (age < 5) {
+    category = "Toddler";
+} else if (age >= 5 && age <= 12) {
+    category = "Child";
+} else if (age >= 13 && age <= 19) {
+    category = "Teenager";
+} else if (age >= 20 && age <= 35) {
+    category = "Young Adult";
+} else if (age >= 36 && age <= 60) {
+    category = "Middle-Aged";
+} else if (age > 60) {
+    category = "Senior";
+} else {
+    category = "Invalid age entered!";
 }
 
-categorizeUserAge();
-*/
+console.log("You belong to the category of: " + category);
