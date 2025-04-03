@@ -1,38 +1,56 @@
-/*function studentEnrollment() {
-  let DSA = [];
-  let WebDev = [];
-  
-  while (true) {
-    let subject = prompt("Select a subject to enroll a student (A) DSA, (B) WebDev:");
-    let selectedSubject;
-    if (subject.toUpperCase() === 'A') {
-      selectedSubject = DSA;
-      subjectName = "DSA";
-    } else if (subject.toUpperCase() === 'B') {
-      selectedSubject = WebDev;
-      subjectName = "WebDev";
+let DSA = [];
+let WebDev = [];
+let running = true;
+
+while (running) {
+    let choice = prompt("Choose your option:\n(A) Enroll\n(B) Unenroll\n(C) Select Another Subject\n(D) Exit").toUpperCase();
+
+    if (choice === "A") {
+        let studentName = prompt("Enter the Student's Name to enroll:");
+        let subject = prompt("Enter the Subject (DSA or WebDev):").toUpperCase();
+
+        if (subject === "DSA") {
+            DSA.push(studentName);
+            console.log(`${studentName} has been enrolled in DSA.`);
+        } else if (subject === "WEBDEV") {
+            WebDev.push(studentName);
+            console.log(`${studentName} has been enrolled in WebDev.`);
+        } else {
+            console.log("Invalid subject! Please choose DSA or WebDev.");
+        }
+    } else if (choice === "B") {
+        let subject = prompt("Enter the subject (DSA or WebDev):").toUpperCase();
+
+        if (subject === "DSA") {
+            if (DSA.length > 0) {
+                console.log(`Current students in DSA: ${DSA.join(", ")}`);
+                let studentToRemove = prompt("Enter the name of the student to remove:");
+                DSA = DSA.filter(student => student !== studentToRemove); 
+                console.log(`${studentToRemove} has been unenrolled from DSA.`);
+            } else {
+                console.log("No students are currently enrolled in DSA.");
+            }
+        } else if (subject === "WEBDEV") {
+            if (WebDev.length > 0) {
+                console.log(`Current students in WebDev: ${WebDev.join(", ")}`);
+                let studentToRemove = prompt("Enter the name of the student to remove:");
+                WebDev = WebDev.filter(student => student !== studentToRemove);
+                console.log(`${studentToRemove} has been unenrolled from WebDev.`);
+            } else {
+                console.log("No students are currently enrolled in WebDev.");
+            }
+        } else {
+            console.log("Invalid subject! Please choose DSA or WebDev.");
+        }
+    } else if (choice === "C") {
+        console.log("Returning to subject selection...");
+    } else if (choice === "D") {
+        console.log("Final List of Students:");
+        console.log(`DSA: ${DSA.join(", ")}`); 
+        console.log(`WebDev: ${WebDev.join(", ")}`); 
+        running = false;
+        console.log("Program exited.");
     } else {
-      console.log("Invalid selection.Please choose A or B.");
-      continue;
+        console.log("Invalid option! Please choose A, B, C, or D.");
     }
-    
-    while (true) {
-      let operation = prompt("Select an option: (0) Enroll, (1) Unenroll, (2) Select Another Subject, (3) Exit");
-      if (operation === '0') {
-        let studentName = prompt("Enter the name of the student to enroll:");
-        selectedSubject.push(studentName);
-                        console.log('${studentName} haa been enrolled in ${subjectName}.');
-                      } else if (operation === '1') {
-                        console.log("Currently enrolled students in " + subjectName + ":" + selectedSubject.join(","));
-                        let studentToUnenroll = prompt("Enter the name of the student to unenroll:");
-                        const index = selectedSubject.indexOf(studentToUnenroll);
-                        if (index !== -1) {
-                          selectedSubject.splice(index, 1);
-                             console.log('${studentToUnenroll} has been unenrolled from ${subjectName}.');
-                           } else {
-                             console.log("Student not found in the enrolled list.");
-                           }
-                         } else if (operation === '2') {
-                             break;
-                           } else if (operation === '3') {
-        
+}
